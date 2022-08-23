@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  java_home: /root
+  maven_home: /root
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-08-23T14:19:06Z"
+  name: k8-sec-5
+  namespace: default
+  resourceVersion: "142148"
+  uid: b88eab1f-90a8-4696-a835-036ff1a6044f

@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  key1: smita
+  key2: kumari
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-08-23T14:11:32Z"
+  name: k8-cm-4
+  namespace: default
+  resourceVersion: "141825"
+  uid: 4d0de552-51ac-486f-9f28-a540ec36ae98
