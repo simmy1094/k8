@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8-pod-1
+  namespace: test
+spec:
+  serviceAccountName: k8-sa-4
+  automountServiceAccountToken: true
+  containers:
+    - name: nginx
+      image: nginx
