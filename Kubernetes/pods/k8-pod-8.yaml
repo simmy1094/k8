@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: k8-pod-8
+  name: k8-pod-8
+spec:
+  containers:
+  - image: nginx
+    name: k8-pod-8
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
