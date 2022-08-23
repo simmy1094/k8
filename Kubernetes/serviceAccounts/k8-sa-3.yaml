@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  creationTimestamp: "2022-08-23T11:42:34Z"
+  name: k8-sa-3
+  namespace: test
+  resourceVersion: "136557"
+  uid: 674c31e9-d6b9-413c-9117-13a0b1141dd2
