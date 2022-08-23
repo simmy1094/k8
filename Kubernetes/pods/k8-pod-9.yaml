@@ -1,0 +1,108 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2022-08-23T15:13:42Z"
+  generateName: k8-dep-1-6b747c87bc-
+  labels:
+    app: pod
+    env: local
+    pod-template-hash: 6b747c87bc
+  name: k8-dep-1-6b747c87bc-jjdhj
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: k8-dep-1-6b747c87bc
+    uid: d4b9af5a-8097-4d96-a90d-04b34c22efa8
+  resourceVersion: "144459"
+  uid: 74b6b3bb-bf5d-477b-9276-c92e208a8c03
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: nginx
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-f8vtw
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: minikube
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-f8vtw
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2022-08-23T15:13:42Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2022-08-23T15:13:46Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2022-08-23T15:13:46Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2022-08-23T15:13:42Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://9e95fc28d88326845727667bd6acb77df55a0edc110a372286f8709d1ba61630
+    image: nginx:latest
+    imageID: docker-pullable://nginx@sha256:f12751f46fdb727e3ef86b1cc34a81dc776572135cf794490763842fd97128ec
+    lastState: {}
+    name: nginx
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2022-08-23T15:13:45Z"
+  hostIP: 192.168.49.2
+  phase: Running
+  podIP: 172.17.0.17
+  podIPs:
+  - ip: 172.17.0.17
+  qosClass: BestEffort
+  startTime: "2022-08-23T15:13:42Z"
